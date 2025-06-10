@@ -7,8 +7,8 @@ import (
 
 // Keyword 搜索关键字
 type Keyword struct {
-	word      string
-	visit     int
+	Word      string
+	Visit     int
 	UpdatedAt *time.Time
 }
 
@@ -35,7 +35,7 @@ func (words Keywords) Clone(updatedWords []*Keyword) Keywords {
 
 	// 替换掉需要更新的字段，这里用的是深拷贝
 	for _, word := range updatedWords {
-		newKeywords[word.word] = word.Clone()
+		newKeywords[word.Word] = word.Clone()
 	}
 
 	return newKeywords
